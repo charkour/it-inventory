@@ -22,14 +22,9 @@ export const Table = (props: ITableProps) => {
             <tbody>
                 {rows.map(row => (
                     <tr
+                        key={Math.random()}
                         className={s(styles.tr, isClickable && styles.clickable)}
-                        onClick={
-                            onRowClick
-                                ? e => {
-                                      onRowClick(row)
-                                  }
-                                : undefined
-                        }
+                        onClick={ onRowClick ? e => { onRowClick(row) } : undefined }
                     >
                         {row}
                     </tr>
